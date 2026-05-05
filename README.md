@@ -19,27 +19,27 @@ The code is intended to document and reproduce the reported experimental pipelin
 
 ```text
 .
-©À©¤©¤ exp1_embedding/
-©¦   ©À©¤©¤ flickr30k_full/
-©¦   ©À©¤©¤ mscoco_task0_full/
-©¦   ©¸©¤©¤ visualnews/
-©À©¤©¤ exp1_retrieval/
-©¦   ©À©¤©¤ run_benchmark.py
-©¦   ©À©¤©¤ launch_jobs.py
-©¦   ©À©¤©¤ search_space.py
-©¦   ©¸©¤©¤ run_*.sh
-©¸©¤©¤ exp2_filter_bench/
-    ©À©¤©¤ data_generation/
-    ©¦   ©¸©¤©¤ generate_filter_ann_hdf5.py
-    ©À©¤©¤ standard_run/
-    ©¦   ©À©¤©¤ acorn/
-    ©¦   ©À©¤©¤ digra/
-    ©¦   ©¸©¤©¤ rangepq/
-    ©¸©¤©¤ vec960_n990k/
-        ©À©¤©¤ acorn/
-        ©À©¤©¤ digra/
-        ©À©¤©¤ rangepq/
-        ©¸©¤©¤ flat/
+|-- exp1_embedding/
+|   |-- flickr30k_full/
+|   |-- mscoco_task0_full/
+|   `-- visualnews/
+|-- exp1_retrieval/
+|   |-- run_benchmark.py
+|   |-- launch_jobs.py
+|   |-- search_space.py
+|   `-- run_*.sh
+`-- exp2_filter_bench/
+    |-- data_generation/
+    |   `-- generate_filter_ann_hdf5.py
+    |-- standard_run/
+    |   |-- acorn/
+    |   |-- digra/
+    |   `-- rangepq/
+    `-- vec960_n990k/
+        |-- acorn/
+        |-- digra/
+        |-- rangepq/
+        `-- flat/
 ```
 
 Only the main run paths are retained. Analysis scratch files, plotting scratch files, result aggregation notes, audit notes, machine-local configuration files, and empty result directories are intentionally omitted.
