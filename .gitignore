@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# Generated experiment outputs / logs (not tracked)
+logs_filter_generation/
+exp1_retrieval/results/
+**/index_cache/
+*.hdf5
