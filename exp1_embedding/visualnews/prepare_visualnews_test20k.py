@@ -9,7 +9,7 @@ Corpus / query embeddings are *not* copied: use full-model ``corpus/`` shards pl
 3. Optionally writes a **filtered** ``qrels.tsv`` under ``--output-dataset-root`` (smaller copy).
 4. Writes ``configs/benchmark_visualnews_test20k_data3_3models.json`` with ``gt_path`` set to the
    **full** silver qrels (default: ``/home/hyhe/vlm-embed-compare/gt/silver/qrels.tsv``), same as
-   ``run_cpu_faiss_visualnews_test20k.sh`` ¡ª evaluation uses 20k ``test_queries`` only; full qrels is fine.
+   ``run_cpu_faiss_visualnews_test20k.sh`` -- evaluation uses 20k ``test_queries`` only; full qrels is fine.
 
 Example::
 
@@ -59,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--output-models-config",
         type=Path,
-        default=ROOT / "configs/benchmark_visualnews_test20k_data3_3models.json",
+        default=ROOT.parents[1] / "exp1_retrieval/configs/benchmark_visualnews_test20k_data3_3models.json",
         help="Benchmark JSON written for run_cpu/run_gpu scripts.",
     )
     p.add_argument(

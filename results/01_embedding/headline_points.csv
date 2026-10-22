@@ -1,0 +1,5 @@
+claim,configuration_id,value,metric,source_table
+VisualNews SigLIP2 Flat Recall@1 is 2.04%,mm-b1a550e9ff09cfb3,0.0204,recall@1,recall_surface_per_configuration.csv
+VisualNews CLIP Flat QPS,mm-199602feef2c8c6d,13.807091709138946,qps,qps_surface_per_configuration.csv
+VisualNews CLIP HNSW best QPS at retention@10 >= 0.99,mm-587e00813630b12d,1898.5632932377605,qps,qps_surface_per_configuration.csv
+VisualNews CLIP CAGRA best QPS at retention@10 >= 0.99,mm-d094509cf0c0aca8,29433.57620184796,qps,qps_surface_per_configuration.csv

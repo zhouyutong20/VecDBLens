@@ -1,0 +1,11 @@
+condition,task,num_query,ground_truth,metric_k
+flickr30k_test5k,text-to-image,5000,dataset caption-image relevance,10
+flickr30k_fullpool,text-to-image,5000,dataset caption-image relevance,10
+mscoco_test5k,text-to-image,24809,dataset caption-image relevance,10
+mscoco_fullpool,text-to-image,24809,dataset caption-image relevance,10
+visualnews_test20k,text-to-image,20000,dataset article-image relevance,10
+sift128_filtered,filtered ANN,10000,exact distance neighbors among filter-compatible vectors,100
+gist960_filtered,filtered ANN,10000,exact distance neighbors among filter-compatible vectors,100
+ag_news_real_filter,filtered ANN with natural categorical filter,7600,exact distance neighbors within the matching natural topic label,100
+cc_news_3day_real_filter,filtered ANN with natural timestamp filter,10000,exact distance neighbors within the query-relative 3-day timestamp window,100
+cc_news_30day_real_filter,filtered ANN with natural timestamp filter,10000,exact distance neighbors within the query-relative 30-day timestamp window,100

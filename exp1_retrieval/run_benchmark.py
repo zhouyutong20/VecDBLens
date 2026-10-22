@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT))
 import numpy as np
 
 from backends import BACKENDS
-from configs.search_space import get_param_groups
+from search_space import get_param_groups
 from utils.io import (
     append_csv,
     append_jsonl,

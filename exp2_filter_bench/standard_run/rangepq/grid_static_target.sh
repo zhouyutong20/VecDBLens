@@ -3,7 +3,8 @@
 # Each run is a 28-thread job bound to one physical socket core set by default.
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT="${RANGEPQ_ROOT:-$(cd "$SCRIPT_DIR/.." && pwd)}"
 export PYTHONPATH="${ROOT}${PYTHONPATH:+:${PYTHONPATH}}"
 
 THREADS="${THREADS:-28}"
@@ -34,7 +35,7 @@ run_cfg() {
   local log="${BATCH_DIR}/${tag}.log"
   echo "===== ${tag} START $(date '+%F %T') =====" | tee -a "${log}"
   echo "[env] PY=${PY} BASE_DIR=${BASE_DIR} STEM=${STEM} THREADS=${THREADS} CPUSET=${CPUSET}" | tee -a "${log}"
-  taskset -c "${CPUSET}" "${PY}" -u "${ROOT}/experiments/run_dataset.py" \
+  taskset -c "${CPUSET}" "${PY}" -u "${SCRIPT_DIR}/run_dataset.py" \
     --base_dir "${BASE_DIR}" \
     --stem "${STEM}" \
     --nbits 8 \

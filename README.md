@@ -1,17 +1,13 @@
 # VecDBLens Artifact
 
-This repository provides the anonymized artifact for reproducing the main experimental scripts used in the paper.
+This repository provides the artifact for reproducing the main experimental scripts used in the paper.
 
 The artifact covers two experimental groups:
 
 - **Experiment 1:** multimodal retrieval evaluation over embedding, indexing, and search stages.
 - **Experiment 2:** filtered ANN evaluation under different dimensionalities and filter ratios.
 
-This repository contains runnable scripts, launchers, configuration templates, and data generation scripts. Large datasets, pretrained model checkpoints, compiled third-party binaries, machine-local configuration files, generated indexes, and raw result directories are not included.
-
-## Anonymous review note
-
-This repository is prepared for anonymous review. Author-identifying information, private machine paths, local configuration files, intermediate logs, hostnames, and unused analysis artifacts have been removed.
+This repository contains experimental scripts, launchers, and data generation scripts. Large datasets, pretrained model checkpoints, compiled third-party binaries, machine-local configuration files, generated indexes, and raw result directories are not included.
 
 The code is intended to document and reproduce the reported experimental pipeline. Reproducers need to prepare datasets, model checkpoints, external algorithm builds, and local path configurations before running the scripts.
 
@@ -28,18 +24,27 @@ The code is intended to document and reproduce the reported experimental pipelin
 |   |-- launch_jobs.py
 |   |-- search_space.py
 |   `-- run_*.sh
-`-- exp2_filter_bench/
-    |-- data_generation/
-    |   `-- generate_filter_ann_hdf5.py
-    |-- standard_run/
-    |   |-- acorn/
-    |   |-- digra/
-    |   `-- rangepq/
-    `-- vec960_n990k/
-        |-- acorn/
-        |-- digra/
-        |-- rangepq/
-        `-- flat/
+|-- exp2_filter_bench/
+|   |-- generate_filter_ann_hdf5.py
+|   |-- standard_run/
+|   |   |-- acorn/
+|   |   |-- digra/
+|   |   `-- rangepq/
+|   `-- vec960_n990k/
+|       |-- acorn/
+|       |-- digra/
+|       |-- rangepq/
+|       `-- flat/
+`-- results/
+    |-- 01_embedding/
+    |-- 02_complete_configuration_tables/
+    |-- 03_pareto_points/
+    |-- 04_monotonicity_repeatability/
+    |-- 05_acorn_fine_grained/
+    |-- 06_ag_news_real_filter/
+    |-- 07_protocol/
+    |-- 08_cc_news_real_filter/
+    `-- 09_digra_construction_m_audit/
 ```
 
 Only the main run paths are retained. Analysis scratch files, plotting scratch files, result aggregation notes, audit notes, machine-local configuration files, and empty result directories are intentionally omitted.
@@ -184,10 +189,10 @@ The original vector values are not modified. We construct filtered-search worklo
 The data generation script is provided at:
 
 ```text
-exp2_filter_bench/data_generation/generate_filter_ann_hdf5.py
+exp2_filter_bench/generate_filter_ann_hdf5.py
 ```
 
-Large generated HDF5 files are not included in this anonymized artifact because of their size. They can be regenerated from the public SIFT and GIST HDF5 files using the provided script.
+Large generated HDF5 files are not included in this artifact because of their size. They can be regenerated from the public SIFT and GIST HDF5 files using the provided script.
 
 ### Generated HDF5 format
 
@@ -217,7 +222,7 @@ The source vectors are sampled from the original `train` and `test` arrays in th
 Generate the 128-dimensional SIFT-derived filtered datasets:
 
 ```bash
-python exp2_filter_bench/data_generation/generate_filter_ann_hdf5.py \
+python exp2_filter_bench/generate_filter_ann_hdf5.py \
   --input /path/to/sift-128-euclidean.hdf5 \
   --output-root /path/to/output \
   --dataset-name sift128 \
@@ -235,7 +240,7 @@ python exp2_filter_bench/data_generation/generate_filter_ann_hdf5.py \
 Generate the 960-dimensional GIST-derived filtered datasets:
 
 ```bash
-python exp2_filter_bench/data_generation/generate_filter_ann_hdf5.py \
+python exp2_filter_bench/generate_filter_ann_hdf5.py \
   --input /path/to/gist-960-euclidean.hdf5 \
   --output-root /path/to/output \
   --dataset-name gist960 \
@@ -440,7 +445,7 @@ Exact output locations depend on the local path settings configured by the repro
 
 ## Notes on omitted files
 
-The following files are intentionally omitted from the anonymized artifact:
+The following files are intentionally omitted from the artifact:
 
 - raw datasets
 - pretrained model checkpoints
@@ -454,19 +459,4 @@ The following files are intentionally omitted from the anonymized artifact:
 - machine-local path files
 - plotting and post-processing scratch files
 
-These omissions are intended to keep the artifact lightweight and anonymous while preserving the main experimental run paths and data generation procedure.
-
-## Anonymous artifact checklist
-
-Before sharing or submitting this repository, please check that the following information does not appear in the repository or rendered anonymous mirror:
-
-- author names
-- affiliations
-- email addresses
-- private GitHub usernames
-- private server usernames
-- absolute local paths
-- hostnames
-- internal project names unrelated to the paper
-- notebook outputs containing local paths
-- PDF or image metadata containing identifying information
+These omissions are intended to keep the artifact lightweight while preserving the main experimental run paths and data generation procedure.

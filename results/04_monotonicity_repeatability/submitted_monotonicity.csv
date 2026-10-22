@@ -1,0 +1,7 @@
+audit,comparisons,raw_violations,raw_violation_rate,max_positive_drop,mean_positive_drop,raw_tolerance,provenance
+ACORN_efSearch,3168,0,0.0,0.0,0.0,0.0,submitted manuscript Table 2; historical summary retained verbatim
+DiGRA_efSearch,480,33,0.069,1.9e-05,,0.0,submitted manuscript Table 2; historical summary retained verbatim
+RangePQ_l,1440,0,0.0,0.0,0.0,0.0,submitted manuscript Table 2; historical summary retained verbatim
+ACORN_M,2244,273,0.122,0.4332,0.1112,0.0,submitted manuscript Table 2; historical summary retained verbatim
+ACORN_efConstruction,1683,306,0.182,0.5237,0.1518,0.0,submitted manuscript Table 2; historical summary retained verbatim
+ACORN_gamma,1836,762,0.415,0.0626,0.0085,0.0,submitted manuscript Table 2; historical summary retained verbatim

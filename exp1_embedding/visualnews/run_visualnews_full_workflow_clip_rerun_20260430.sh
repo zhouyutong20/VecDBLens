@@ -4,8 +4,8 @@ set -euo pipefail
 export PYTHONUNBUFFERED=1
 
 PYTHON_BIN="${PYTHON_BIN:-/home/hyhe/embedding_test_full_v2/bin/python}"
-CPU_RUNNER="/home/hyhe/vlm-embed-compare/src/run_retrieval_benchmark.py"
-GPU_RUNNER="/home/hyhe/vlm-embed-compare/src/run_retrieval_benchmark_gpu.py"
+CPU_RUNNER="${CPU_RUNNER:-/home/hyhe/vlm-embed-compare/src/run_retrieval_benchmark.py}"
+GPU_RUNNER="${GPU_RUNNER:-/home/hyhe/vlm-embed-compare/src/run_retrieval_benchmark_gpu.py}"
 QRELS="/home/hyhe/vlm-embed-compare/gt/silver/qrels.tsv"
 OUTPUT_ROOT="/home/hyhe/vlm-embed-compare/results_full_visualnews"
 MODELS_CSV="clip,siglip2,qwen3"

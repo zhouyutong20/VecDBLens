@@ -1,0 +1,18 @@
+section,item,metric,value,baseline,target,delta,notes
+method_maximum,ACORN-1,max_recall@100,0.9999,,,,
+method_maximum,ACORN-28,max_recall@100,0.9999,,,,
+method_maximum,DiGRA,max_recall@100,0.999509,,,,
+method_maximum,Flat,max_recall@100,0.9999947368421053,,,,
+method_maximum,RangePQ,max_recall@100,0.9796263157894535,,,,
+ACORN-1_efConstruction_audit,efConstruction_100_to_400,comparisons,78,,,,matched conditions
+ACORN-1_efConstruction_audit,efConstruction_100_to_400,raw_decreases,74,,,,matched conditions
+ACORN-1_efConstruction_audit,efConstruction_100_to_400,decreases_over_tolerance,71,,,,matched conditions
+ACORN-1_efConstruction_audit,efConstruction_100_to_400,mean_delta,-0.057655128205128206,,,,matched conditions
+ACORN-1_efConstruction_audit,efConstruction_100_to_400,max_drop,0.31010000000000004,,,,matched conditions
+ACORN-1_example,"gamma=2,M=64,efSearch=100",recall@100,,0.984,0.7401,-0.2439,efConstruction 100 -> 400
+graph_audit,"gamma=2,M=128,efConstruction=100",mean_degree,184.973125,,,,graph_seed=12345
+graph_audit,"gamma=2,M=128,efConstruction=100",fcnr_mean,0.8130154296509654,,,,graph_seed=12345
+graph_audit,"gamma=2,M=64,efConstruction=100",mean_degree,148.75118333333333,,,,graph_seed=12345
+graph_audit,"gamma=2,M=64,efConstruction=100",fcnr_mean,0.8214135822791685,,,,graph_seed=12345
+graph_audit,"gamma=2,M=64,efConstruction=400",mean_degree,157.3208,,,,graph_seed=12345
+graph_audit,"gamma=2,M=64,efConstruction=400",fcnr_mean,0.7186242356582319,,,,graph_seed=12345

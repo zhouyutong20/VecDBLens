@@ -1,0 +1,31 @@
+{
+    "source_hdf5":  "BigVectorBench/cc_news-384-euclidean-filter.hdf5",
+    "seed":  20260727,
+    "pairs_per_query":  100,
+    "sampled_pair_count_per_group":  1000000,
+    "bootstrap_resamples":  10000,
+    "thirty_day_window":  {
+                              "candidate_count":  {
+                                                      "min":  763.0,
+                                                      "median":  26365.5,
+                                                      "mean":  27912.5712,
+                                                      "max":  61870.0
+                                                  },
+                              "selectivity_percent":  {
+                                                          "min":  0.12293701854367163,
+                                                          "median":  4.24809431508935,
+                                                          "mean":  4.497363411816455,
+                                                          "max":  9.968693757925248
+                                                      }
+                          },
+    "distance_locality_thirty_day":  {
+                                         "eligible_pair_mean_euclidean_distance":  1.339220578980072,
+                                         "corpus_pair_mean_euclidean_distance":  1.3413050911141915,
+                                         "eligible_to_corpus_ratio":  0.9984459075359298,
+                                         "ratio_bootstrap_95ci":  [
+                                                                      0.9982655259066708,
+                                                                      0.998628099944616
+                                                                  ],
+                                         "sampling_unit":  "query"
+                                     }
+}

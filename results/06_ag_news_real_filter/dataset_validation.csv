@@ -1,0 +1,12 @@
+property,value
+status,ok
+base_vectors,120000
+queries,7600
+dimension,384
+categories,4
+base_vectors_per_category,30000
+queries_per_category,1900
+filter_operator,category equality
+filter_selectivity,0.25
+ground_truth_filter_compatible_fraction,1.0
+ground_truth_matches_raw,True

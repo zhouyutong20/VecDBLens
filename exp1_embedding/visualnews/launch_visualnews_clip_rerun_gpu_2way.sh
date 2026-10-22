@@ -2,7 +2,8 @@
 set -euo pipefail
 
 export PYTHONUNBUFFERED=1
-FULL_WORKFLOW="/home/hyhe/vlm-embed-compare/src/run_visualnews_full_workflow_clip_rerun_20260430.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+FULL_WORKFLOW="${FULL_WORKFLOW:-$SCRIPT_DIR/run_visualnews_full_workflow_clip_rerun_20260430.sh}"
 RESULT_ROOT="${1:-/data3/hyhe/vlm-embed-compare/results_rerun/visualnews_clip_retrieval_rerun_20260430_1016}"
 LOG_DIR="$RESULT_ROOT/_launcher_logs/gpu"
 mkdir -p "$LOG_DIR"

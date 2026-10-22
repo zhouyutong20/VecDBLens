@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 MODEL="$1"
 GPU="$2"
 VNENV="${VNENV:-/home/hyhe/vnemb}"
@@ -73,8 +75,8 @@ if [[ -n "${CHECKPOINT_PATH:-}" ]]; then
   CORPUS_ARGS+=(--checkpoint-path "$CHECKPOINT_PATH")
 fi
 
-CUDA_VISIBLE_DEVICES="$GPU" python "$ROOT/src/embed_visualnews.py" "${QUERY_ARGS[@]}"
+CUDA_VISIBLE_DEVICES="$GPU" python "$SCRIPT_DIR/embed_visualnews.py" "${QUERY_ARGS[@]}"
 
-CUDA_VISIBLE_DEVICES="$GPU" python "$ROOT/src/embed_visualnews.py" "${CORPUS_ARGS[@]}"
+CUDA_VISIBLE_DEVICES="$GPU" python "$SCRIPT_DIR/embed_visualnews.py" "${CORPUS_ARGS[@]}"
 
 echo "[$(date '+%F %T')] done model=$MODEL gpu=$GPU"

@@ -1,0 +1,11 @@
+scope,hardware_or_framework,threads_or_gpu,seed,repeat_count,raw_tolerance,practical_tolerance,permutations,bootstrap_resamples,multiplicity,notes
+multimodal_cpu,2x Intel Xeon Gold 6330; Faiss CPU,28 CPU threads,,,,,,,,Flat is exact inner-product search; QPS=num_queries/search_time; search-only timing
+multimodal_gpu,Tesla V100-PCIE-32GB,1 GPU by default,,,,,,,,VisualNews Qwen3-VL CAGRA used four separately built GPU graphs
+submitted_table1_interval,,,not applicable,,,,,3125 exact ordered resamples,,All 5^5 condition-level bootstrap resamples enumerated
+native_pca512_first512_significance,paired query-level analysis,,20260725,,,,100000,10000,global Holm correction over 15 comparisons,two-sided cluster sign-flip permutation; clusters group queries sharing the same relevance set/image
+digra_repeat_audit,9 independently built indexes,single-thread build and search,"1,2,3",3 per seed,0,0.0001,,,,SIFT128; M=64; efConstruction=100; all repeats are identified in the released tables
+acorn_repeatability,two independent builds/configuration,112 build threads; 1 search thread,12345,2,0,0.0001,,,,parallel construction may differ by scheduling/order
+acorn_fine_grained_bootstrap,query-cluster bootstrap,,20260725,,,,,50000,,
+ag_news,"Flat, RangePQ, DiGRA, ACORN-1, ACORN-28",method-specific; recorded per row,DiGRA=0; ACORN=12345,QPS measured once/configuration,0,0.0001,,,,natural category equality filter
+cc_news_acorn28,12 construction configurations per window,112 build threads; 28 search threads,construction seed=12345; locality seed=20260727,QPS measured once/configuration,0,0.0001,,10000,,natural 3-day and 30-day timestamp filters; 156 search points per window
+digra_m_paired_reanalysis,released DiGRA configuration grid,single-thread search,submitted configuration runs,one retained run/configuration,0,,,,,520 adjacent comparisons change only M; no repeatability claim
